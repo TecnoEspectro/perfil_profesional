@@ -69,7 +69,7 @@ var array_null = [
   console.log("multiplicacion = " + multi);
   // DIVISION
   var divi = number_one / number_two;
-  console.log("division = " + divi.toFixed);
+  console.log("division = " + divi.toFixed(2));
   // MODULO
   var resta = number_one % number_two;
   console.log("modulo = " + modulo);
