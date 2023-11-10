@@ -139,8 +139,8 @@ const information = document.getElementById("information");
 form_register.addEventListener("submit", name_event => {
   name_event.preventDefault();
   let info = "";
-  //console.log(nombres.value);
-  if (nombres.ariaValueMax.lenght <= 2 || apellidos.ariaValueMax.length <= 2) {
+  console.log(nombres.value);
+  if (nombres.value.length < 2 || apellidos.value.length <= 2) {
     info += "NOMBRES Y/O APELLIDOS INVALIDOS";
     information.style.color = "red";
   }
@@ -149,3 +149,25 @@ form_register.addEventListener("submit", name_event => {
   }
   information.innerText = info;
 })
+
+function load_page(){
+  document.getElementById("nombres").focus();
+  document.getElementById("apellidos").disabled = true;
+  // let date = new Date();
+  // console.log(date).get();
+  for(let j=0;j<array_null.length;j++){
+    console.log(array_null[j].name);
+  }
+}
+
+function validate(){
+  let nombres = document.getElementById("nombres").value;
+  let nombres_style = document.getElementById("nombres");
+  if(nombres.length>2){
+nombres_style.border = "2px solid green";
+document.getElementById("apellidos").disabled = false;
+document.getElementById("apellidos").focus();
+document.getElementById("nombres").value = " ";
+alert(nombres.concat("Duarte"));
+  }
+}
