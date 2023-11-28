@@ -136,18 +136,18 @@ const nombres = document.getElementById("nombres");
 const apellidos = document.getElementById("apellidos");
 const information = document.getElementById("information");
 
-form_register.addEventListener("submit", name_event => {
-  name_event.preventDefault();
-  let info = "";
-  console.log(nombres.value);
-  if (nombres.value.length < 2 || apellidos.value.length <= 2) {
-    info += "NOMBRES Y/O APELLIDOS INVALIDOS";
-    information.style.color = "red";
-  }
-  else {
-    alert(nombres.value + " " + apellidos.value);
-  }
-  information.innerText = info;
+form_register.addEventListener("submit", name_event =>{
+    name_event.preventDefault();
+    let info = "";
+    console.log(nombres.value);
+    if(nombres.value.length <= 2 || apellidos.value.length <=2){
+        info += "NOMBRES Y/O APELLIDOS INVALIDOS";
+        information.style.color= "red";
+    }
+    else{
+        alert(nombres.value + " " + apellidos.value)
+    }
+    information.innerText = info;
 })
 
 function load_page(){
@@ -155,19 +155,21 @@ function load_page(){
   document.getElementById("apellidos").disabled = true;
   // let date = new Date();
   // console.log(date).get();
-  for(let j=0;j<array_null.length;j++){
-    console.log(array_null[j].name);
+  let date = new Date();
+  console.log(date.getMinutes());
+  for(let j=0; j<array_mul.length;j++){
+      console.log(array_mul[j].name);
   }
 }
 
 function validate(){
-  let nombres = document.getElementById("nombres").value;
-  let nombres_style = document.getElementById("nombres");
-  if(nombres.length>2){
-nombres_style.border = "2px solid green";
-document.getElementById("apellidos").disabled = false;
-document.getElementById("apellidos").focus();
-document.getElementById("nombres").value = " ";
-alert(nombres.concat("Duarte"));
-  }
+    let nombres = document.getElementById("nombres").value;
+    let nombres_style = document.getElementById("nombres");
+    if (nombres.length > 2){
+        nombres_style.border = "2px solid green";
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value = "";
+        alert(nombres.concat("Duarte"));
+    }
 }
